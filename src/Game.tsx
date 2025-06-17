@@ -180,7 +180,7 @@ function Game() {
               <div className='grid grid-cols-4 gap-4 lg:gap-x-10 lg:gap-y-8'>
                 {duplicate.map((card, index) => (
                   <div ref={item} className='w-fit' key={index} data-id={index}>
-                    <img onClick={() => [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} src={turnedCards.includes(index) ? card.turnedImg : card.defaultImg} alt={card.id} />
+                    <img onKeyDown={(e) => e.key === 'Enter' && [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} onClick={() => [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} src={turnedCards.includes(index) ? card.turnedImg : card.defaultImg} alt={card.id} tabIndex={0}/>
                   </div>
                 ))}
               </div>
@@ -235,7 +235,7 @@ function Game() {
               <div className='grid grid-cols-4 lg:grid-cols-6 gap-4 lg:gap-x-6 lg:gap-y-8'>
                   {duplicate.map((card, index) => (
                   <div ref={item} className='w-fit' key={index} data-id={index}>
-                      <img onClick={() => [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} src={turnedCards.includes(index) ? card.turnedImg : card.defaultImg} alt={card.id} />
+                      <img onKeyDown={(e) =>  e.key === 'Enter' && [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} onClick={() => [setCardName([...cardName, card.id]), setTurnedCards([...turnedCards, index])]} src={turnedCards.includes(index) ? card.turnedImg : card.defaultImg} alt={card.id} tabIndex={0}/>
                   </div>
                   ))}
               </div>
